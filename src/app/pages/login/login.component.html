@@ -1,0 +1,74 @@
+<div class="parent">
+  <div class="container" [ngClass]="showSignUp ? 'active' : ''" id="container">
+    <div class="form-container sign-up">
+      <form>
+        <h1>Create Account</h1>
+        <input
+          type="text"
+          name="name"
+          [(ngModel)]="signUpUser.name"
+          placeholder="Name"
+        />
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="signUpUser.email"
+          placeholder="Email"
+        />
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="signUpUser.password"
+          placeholder="Password"
+        />
+        <button (click)="onRegister()">Sign Up</button>
+      </form>
+    </div>
+    <div class="form-container sign-in">
+      <form>
+        <h1>Sign In</h1>
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="loginUser.email"
+          placeholder="Email"
+        />
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="loginUser.password"
+          placeholder="Password"
+        />
+        <a href="#">→ Forget Your Password? ←</a>
+        <button (click)="onLogin()">Sign In</button>
+      </form>
+    </div>
+    <div class="toggle-container">
+      <div class="toggle">
+        <div class="toggle-panel toggle-left">
+          <h1 class="mb-4">Welcome Back!</h1>
+          <button
+            type="button"
+            class="hidden"
+            id="login"
+            (click)="showSignUp = false"
+          >
+            Sign In
+          </button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <h1>Hello, Friend!</h1>
+          <p>Register now to access jobs & events!</p>
+          <button
+            type="button"
+            class="hidden"
+            id="register"
+            (click)="showSignUp = true"
+          >
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
