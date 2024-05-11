@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.upcomingEvents$ = this.eventsService.getUpcomingEvents().pipe(
-      map((events) => events.slice(0, 3)), // Limit to 3 upcoming events
+      map((events) => events.slice(0, 5)), // Limit to 5 upcoming events
       catchError((error) => of([])) // Handle errors by returning empty array
     );
 

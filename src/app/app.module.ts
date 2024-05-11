@@ -12,6 +12,7 @@ import { InputFieldEmailComponent } from './components/input-field-email/input-f
 import { InputFieldNameComponent } from './components/input-field-name/input-field-name.component';
 import { InputFieldPasswordComponent } from './components/input-field-password/input-field-password.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     InputFieldPasswordComponent,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

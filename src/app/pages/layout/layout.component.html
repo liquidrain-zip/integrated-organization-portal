@@ -1,10 +1,140 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container-fluid">
-    <span class="text-white">Welcome back, {{ loggedUser?.name }} </span>
-    <button class="btn btn-primary" type="button" (click)="onLogoff()">
-      Logout
-    </button>
+<header class="tw-bg-white">
+  <nav
+    class="tw-mx-auto tw-flex tw-max-w-7xl tw-items-center tw-justify-between tw-p-6 lg:tw-px-8"
+    aria-label="Global"
+  >
+    <div class="tw-flex lg:tw-flex-1">
+      <a href="#" class="tw--m-1.5 tw-p-1.5">
+        <span class="tw-sr-only">Company</span>
+        <img
+          class="tw-h-8 tw-w-auto"
+          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+          alt=""
+        />
+      </a>
+    </div>
+    <div class="tw-flex lg:tw-hidden">
+      <button
+        type="button"
+        class="tw--m-2.5 tw-inline-flex tw-items-center tw-justify-center tw-rounded-md tw-p-2.5 tw-text-gray-700"
+      >
+        <span class="tw-sr-only">Open main menu</span>
+        <svg
+          class="tw-h-6 tw-w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="tw-hidden lg:tw-flex lg:tw-gap-x-12">
+      <a
+        href="#"
+        class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900"
+        >Dashboard</a
+      >
+      <a
+        href="#"
+        class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900"
+        >Jobs</a
+      >
+      <a
+        href="#"
+        class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900"
+        >Events</a
+      >
+    </div>
+    <div class="tw-hidden lg:tw-flex lg:tw-flex-1 lg:tw-justify-end">
+      <a
+        href="#"
+        class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900"
+        (click)="onLogoff()"
+        >Logout <span aria-hidden="true">&rarr;</span></a
+      >
+    </div>
+  </nav>
+  <!-- Mobile menu, show/hide based on menu open state. -->
+  <div class="lg:tw-hidden" role="dialog" aria-modal="true">
+    <!-- Background backdrop, show/hide based on slide-over state. -->
+    <div class="tw-fixed tw-inset-0 tw-z-10"></div>
+    <div
+      class="tw-fixed tw-inset-y-0 tw-right-0 tw-z-10 tw-w-full tw-overflow-y-auto tw-bg-white tw-px-6 tw-py-6 sm:tw-max-w-sm sm:tw-ring-1 sm:tw-ring-gray-900/10"
+    >
+      <div class="tw-flex tw-items-center tw-justify-between">
+        <a href="#" class="tw--m-1.5 tw-p-1.5">
+          <span class="sr-only">Your Company</span>
+          <img
+            class="h-8 w-auto"
+            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+            alt=""
+          />
+        </a>
+        <button
+          type="button"
+          class="tw--m-2.5 tw-rounded-md tw-p-2.5 tw-text-gray-700"
+        >
+          <span class="tw-sr-only">Close menu</span>
+          <svg
+            class="tw-h-6 tw-w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="tw-mt-6 tw-flow-root">
+        <div class="tw--my-6 tw-divide-y tw-divide-gray-500/10">
+          <div class="tw-space-y-2 tw-py-6">
+            <a
+              href="#"
+              class="tw--mx-3 tw-block tw-rounded-lg tw-px-3 tw-py-2 tw-text-base tw-font-semibold tw-leading-7 tw-text-gray-900 hover:tw-bg-gray-50"
+              >Dashboard</a
+            >
+            <a
+              href="#"
+              class="tw--mx-3 tw-block tw-rounded-lg tw-px-3 tw-py-2 tw-text-base tw-font-semibold tw-leading-7 tw-text-gray-900 hover:tw-bg-gray-50"
+              >Jobs</a
+            >
+            <a
+              href="#"
+              class="tw--mx-3 tw-block tw-rounded-lg tw-px-3 tw-py-2 tw-text-base tw-font-semibold tw-leading-7 tw-text-gray-900 hover:tw-bg-gray-50"
+              >Events</a
+            >
+          </div>
+          <div class="tw-py-6">
+            <a
+              href="#"
+              class="tw--mx-3 tw-block tw-rounded-lg tw-px-3 tw-py-2.5 tw-text-base tw-font-semibold tw-leading-7 tw-text-gray-900 hover:tw-bg-gray-50"
+              >Log out</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</nav>
+</header>
 
 <router-outlet></router-outlet>
+
+<footer>
+  <mat-divider fxFlex="100%" style="background-color: gray"></mat-divider>
+  <a href="#">Terms &amp; Conditions</a>
+  <a href="#" style="margin-left: 20px; margin-right: 20px">Privacy Policy</a>
+  <a style="color: gray">&copy; 2024 Copyright</a>
+</footer>
