@@ -13,6 +13,8 @@ import { InputFieldNameComponent } from './components/input-field-name/input-fie
 import { InputFieldPasswordComponent } from './components/input-field-password/input-field-password.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDividerModule } from '@angular/material/divider';
+import { JobsComponent } from './pages/jobs/jobs.component';
+import { EventsComponent } from './pages/events/events.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { MatDividerModule } from '@angular/material/divider';
     LoginComponent,
     LayoutComponent,
     DashboardComponent,
+    JobsComponent,
+    EventsComponent,
   ],
   imports: [
     BrowserModule,

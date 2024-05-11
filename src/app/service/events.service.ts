@@ -42,16 +42,16 @@ const mockEvents: UpcomingEvent[] = [
     attendance: 150,
   },
   {
+    title: 'Cloud Computing Fundamentals Course',
+    date: new Date('2024-06-10'),
+    type: 'Course',
+    attendance: 30,
+  },
+  {
     title: 'Product Design Conference',
     date: new Date('2024-06-10'),
     type: 'Conference',
     attendance: 500,
-  },
-  {
-    title: 'Cloud Computing Fundamentals Course',
-    date: new Date('2024-06-15'),
-    type: 'Course',
-    attendance: 30,
   },
   {
     title: 'Machine Learning Hackathon',
@@ -142,5 +142,11 @@ const mockEvents: UpcomingEvent[] = [
     date: new Date('2024-10-02'),
     type: 'Discussion',
     attendance: 150,
+  },
+  {
+    title: 'Open Source Software Contribution Workshop',
+    date: new Date('2024-10-09'),
+    type: 'Workshop',
+    attendance: 75,
   },
 ];

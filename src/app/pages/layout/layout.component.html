@@ -4,14 +4,19 @@
     aria-label="Global"
   >
     <div class="tw-flex lg:tw-flex-1">
-      <a href="#" class="tw--m-1.5 tw-p-1.5">
+      <button (onclick)="navigateTo('dashboard')" class="tw--m-1.5 tw-p-1.5">
         <span class="tw-sr-only">Company</span>
         <img
           class="tw-h-8 tw-w-auto"
           src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
           alt=""
         />
-      </a>
+      </button>
+      <div
+        class="tw-ml-4 tw-font-bold tw-leading-7 tw-text-gray-900 sm:tw-truncate sm:tw-tracking-tight"
+      >
+        Welcome back {{ loggedUser.name }}
+      </div>
     </div>
     <div class="tw-flex lg:tw-hidden">
       <button
@@ -36,29 +41,32 @@
       </button>
     </div>
     <div class="tw-hidden lg:tw-flex lg:tw-gap-x-12">
-      <a
-        href="#"
+      <button
         class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900"
-        >Dashboard</a
+        (click)="navigateTo('dashboard')"
       >
-      <a
-        href="#"
+        Dashboard
+      </button>
+      <button
         class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900"
-        >Jobs</a
+        (click)="navigateTo('jobs')"
       >
-      <a
-        href="#"
+        Jobs
+      </button>
+      <button
         class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900"
-        >Events</a
+        (click)="navigateTo('events')"
       >
+        Events
+      </button>
     </div>
     <div class="tw-hidden lg:tw-flex lg:tw-flex-1 lg:tw-justify-end">
-      <a
-        href="#"
+      <button
         class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900"
         (click)="onLogoff()"
-        >Logout <span aria-hidden="true">&rarr;</span></a
       >
+        Logout <span aria-hidden="true">&rarr;</span>
+      </button>
     </div>
   </nav>
   <!-- Mobile menu, show/hide based on menu open state. -->
@@ -69,14 +77,14 @@
       class="tw-fixed tw-inset-y-0 tw-right-0 tw-z-10 tw-w-full tw-overflow-y-auto tw-bg-white tw-px-6 tw-py-6 sm:tw-max-w-sm sm:tw-ring-1 sm:tw-ring-gray-900/10"
     >
       <div class="tw-flex tw-items-center tw-justify-between">
-        <a href="#" class="tw--m-1.5 tw-p-1.5">
-          <span class="sr-only">Your Company</span>
+        <button (click)="navigateTo('dashboard')" class="tw--m-1.5 tw-p-1.5">
+          <span class="sr-only">Company</span>
           <img
             class="h-8 w-auto"
             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
             alt=""
           />
-        </a>
+        </button>
         <button
           type="button"
           class="tw--m-2.5 tw-rounded-md tw-p-2.5 tw-text-gray-700"
@@ -98,31 +106,41 @@
           </svg>
         </button>
       </div>
+
+      <div
+        class="tw-font-bold tw-leading-7 tw-text-gray-900 sm:tw-truncate sm:tw-tracking-tight"
+      >
+        Welcome back {{ loggedUser.name }}
+      </div>
       <div class="tw-mt-6 tw-flow-root">
         <div class="tw--my-6 tw-divide-y tw-divide-gray-500/10">
           <div class="tw-space-y-2 tw-py-6">
-            <a
-              href="#"
+            <button
               class="tw--mx-3 tw-block tw-rounded-lg tw-px-3 tw-py-2 tw-text-base tw-font-semibold tw-leading-7 tw-text-gray-900 hover:tw-bg-gray-50"
-              >Dashboard</a
+              (click)="navigateTo('dashboard')"
             >
-            <a
-              href="#"
+              Dashboard
+            </button>
+            <button
               class="tw--mx-3 tw-block tw-rounded-lg tw-px-3 tw-py-2 tw-text-base tw-font-semibold tw-leading-7 tw-text-gray-900 hover:tw-bg-gray-50"
-              >Jobs</a
+              (click)="navigateTo('jobs')"
             >
-            <a
-              href="#"
+              Jobs
+            </button>
+            <button
               class="tw--mx-3 tw-block tw-rounded-lg tw-px-3 tw-py-2 tw-text-base tw-font-semibold tw-leading-7 tw-text-gray-900 hover:tw-bg-gray-50"
-              >Events</a
+              (click)="navigateTo('events')"
             >
+              Events
+            </button>
           </div>
           <div class="tw-py-6">
-            <a
-              href="#"
+            <button
               class="tw--mx-3 tw-block tw-rounded-lg tw-px-3 tw-py-2.5 tw-text-base tw-font-semibold tw-leading-7 tw-text-gray-900 hover:tw-bg-gray-50"
-              >Log out</a
+              (click)="onLogoff()"
             >
+              Logout
+            </button>
           </div>
         </div>
       </div>
@@ -134,7 +152,7 @@
 
 <footer>
   <mat-divider fxFlex="100%" style="background-color: gray"></mat-divider>
-  <a href="#">Terms &amp; Conditions</a>
-  <a href="#" style="margin-left: 20px; margin-right: 20px">Privacy Policy</a>
-  <a style="color: gray">&copy; 2024 Copyright</a>
+  <a class="tw-text-sm tw-ml-4">Terms &amp; Conditions</a>
+  <a class="tw-text-sm tw-ml-4">Privacy Policy</a>
+  <a class="tw-text-sm tw-ml-4">&copy; 2024 Copyright</a>
 </footer>
