@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Subscription, catchError, map, of, tap } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +15,9 @@ export class LoginComponent {
   loginUser: LoginModel = new LoginModel();
   disableSignUp: boolean = true;
   disableLogin: boolean = true;
+  loginSubscription: Subscription | null = null;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
 
   updateSignUpUser(value: string, key: string) {
     this.signUpUser = {
@@ -70,9 +73,11 @@ export class LoginComponent {
       localStorage.setItem('usersInfo', JSON.stringify(users));
     }
     this.showSignUp = false; // show login
+
+    // Implement logic for user registration with backend
   }
 
-  onLogin() {
+  mockLogin() {
     const localUsers = localStorage.getItem('usersInfo');
     if (localUsers != null) {
       const users = JSON.parse(localUsers);
@@ -85,6 +90,36 @@ export class LoginComponent {
         localStorage.setItem('loggedUser', JSON.stringify(isUserPresent));
         this.router.navigateByUrl('/dashboard');
       }
+    }
+  }
+
+  onLogin() {
+    const loginUrl = '/api/login'; // Replace with your login API endpoint
+
+    this.loginSubscription = this.http
+      .post(loginUrl, this.loginUser)
+      .pipe(
+        map((response) => {
+          // Handle successful login response (e.g., extract token)
+          return response;
+        }),
+        tap(() => {
+          // Handle successful login (e.g., navigate, store token)
+          localStorage.setItem('loggedUser', JSON.stringify(this.loginUser));
+          this.router.navigateByUrl('/dashboard');
+        }),
+        catchError((error) => {
+          console.error('Login error:', error);
+          this.mockLogin(); // simulate a mock login success
+          return of(null);
+        })
+      )
+      .subscribe();
+  }
+
+  ngOnDestroy() {
+    if (this.loginSubscription) {
+      this.loginSubscription.unsubscribe();
     }
   }
 }

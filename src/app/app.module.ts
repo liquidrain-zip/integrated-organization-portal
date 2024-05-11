@@ -11,6 +11,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InputFieldEmailComponent } from './components/input-field-email/input-field-email.component';
 import { InputFieldNameComponent } from './components/input-field-name/input-field-name.component';
 import { InputFieldPasswordComponent } from './components/input-field-password/input-field-password.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { InputFieldPasswordComponent } from './components/input-field-password/i
     InputFieldNameComponent,
     InputFieldPasswordComponent,
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
