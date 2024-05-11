@@ -61,6 +61,7 @@ export class LoginComponent {
   }
 
   onRegister() {
+    // mock registration
     // adds new sign up user to list of registered users to local storage
     const localUser = localStorage.getItem('usersInfo');
     if (localUser != null) {
@@ -73,8 +74,6 @@ export class LoginComponent {
       localStorage.setItem('usersInfo', JSON.stringify(users));
     }
     this.showSignUp = false; // show login
-
-    // Implement logic for user registration with backend
   }
 
   mockLogin() {
@@ -94,8 +93,7 @@ export class LoginComponent {
   }
 
   onLogin() {
-    const loginUrl = '/api/login'; // Replace with your login API endpoint
-
+    const loginUrl = '/api/login';
     this.loginSubscription = this.http
       .post(loginUrl, this.loginUser)
       .pipe(
