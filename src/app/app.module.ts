@@ -13,6 +13,8 @@ import { InputFieldNameComponent } from './components/input-field-name/input-fie
 import { InputFieldPasswordComponent } from './components/input-field-password/input-field-password.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { EventsComponent } from './pages/events/events.component';
 
@@ -35,6 +37,8 @@ import { EventsComponent } from './pages/events/events.component';
     BrowserAnimationsModule,
     HttpClientModule,
     MatDividerModule,
+    MatCardModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,1 +1,63 @@
-<p>jobs works!</p>
+<h2
+  class="tw-px-6 tw-text-2xl tw-font-bold tw-leading-7 tw-text-gray-900 sm:tw-truncate sm:tw-text-3xl sm:tw-tracking-tight"
+>
+  Job Opportunities
+</h2>
+<div class="flex row tw-px-6">
+  <mat-list role="list" class="col-5">
+    <div class="tw-divide-y tw-divide-gray-100">
+      @for (job of jobOpportunities$ | async; track job) {
+      <mat-list-item>
+        <div class="tw-flex tw-justify-between tw-gap-x-6 tw-py-5">
+          <div class="flex min-w-0 gap-x-4">
+            <div class="tw-min-w-0 tw-flex-auto">
+              <p
+                class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900"
+              >
+                {{ job.title }}
+              </p>
+              <p
+                class="tw-mt-1 tw-truncate tw-text-xs tw-leading-5 tw-text-gray-500"
+              >
+                {{ job.company }}
+              </p>
+            </div>
+          </div>
+          <div
+            class="tw-hidden tw-shrink-0 sm:tw-flex sm:tw-flex-col sm:tw-items-end"
+          >
+            <p class="tw-text-sm tw-leading-6 tw-text-gray-900">
+              {{ job.type }}
+            </p>
+            <p class="tw-mt-1 tw-text-xs tw-leading-5 tw-text-gray-500">
+              Applications: {{ job.applications }}
+            </p>
+          </div>
+        </div>
+      </mat-list-item>
+      }
+    </div>
+  </mat-list>
+  <mat-card class="col-7">
+    <mat-card-header>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>This card indeterminates progress bar.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mollis
+        scelerisque fermentum. Proin metus nulla, viverra quis ornare suscipit,
+        malesuada vel tellus. Etiam vitae tortor quis enim accumsan molestie.
+        Aenean maximus, quam suscipit efficitur tincidunt, leo leo consequat
+        ante, non lobortis sapien leo sed mi. Fusce sagittis eu ligula dignissim
+        finibus. Vestibulum venenatis quam erat, vel sodales quam lobortis
+        vitae. Nullam gravida vitae sem tincidunt scelerisque. Donec orci purus,
+        ullamcorper sit amet ligula quis, gravida aliquam nibh.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button color="primary">Apply</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -4,6 +4,7 @@ import { catchError, map } from 'rxjs/operators';
 
 import { EventsService } from '../../service/events.service';
 import { JobsService } from '../../service/jobs.service';
+import { Router } from '@angular/router';
 
 interface UpcomingEvent {
   title: string;
@@ -30,7 +31,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private eventsService: EventsService,
-    private jobsService: JobsService
+    private jobsService: JobsService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -43,5 +45,9 @@ export class DashboardComponent implements OnInit {
       map((jobs) => jobs.slice(0, 5)), // Limit to 5 job opportunities
       catchError((error) => of([])) // Handle errors by returning empty array
     );
+  }
+
+  navigateTo(link: string) {
+    this.router.navigateByUrl('/' + link);
   }
 }

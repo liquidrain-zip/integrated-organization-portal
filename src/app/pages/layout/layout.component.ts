@@ -22,8 +22,6 @@ export class LayoutComponent {
   }
 
   navigateTo(link: string) {
-    console.log(link);
-
     this.router.navigateByUrl('/' + link);
   }
 }
