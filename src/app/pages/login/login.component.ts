@@ -3,6 +3,28 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Subscription, catchError, map, of, tap } from 'rxjs';
 
+export class SignUpModel {
+  name: string;
+  email: string;
+  password: string;
+
+  constructor() {
+    this.email = '';
+    this.name = '';
+    this.password = '';
+  }
+}
+
+export class LoginModel {
+  email: string;
+  password: string;
+
+  constructor() {
+    this.email = '';
+    this.password = '';
+  }
+}
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -119,27 +141,5 @@ export class LoginComponent {
     if (this.loginSubscription) {
       this.loginSubscription.unsubscribe();
     }
-  }
-}
-
-export class SignUpModel {
-  name: string;
-  email: string;
-  password: string;
-
-  constructor() {
-    this.email = '';
-    this.name = '';
-    this.password = '';
-  }
-}
-
-export class LoginModel {
-  email: string;
-  password: string;
-
-  constructor() {
-    this.email = '';
-    this.password = '';
   }
 }

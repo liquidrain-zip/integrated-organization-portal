@@ -1,1 +1,27 @@
-<p>dashboard works!</p>
+<div class="container mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="bg-white rounded-lg shadow-md p-4">
+      <h2 class="text-xl font-bold mb-2">Upcoming Events</h2>
+      <ul class="list-disc space-y-2">
+        <li *ngFor="let event of upcomingEvents$ | async">
+          {{ event.title }} - {{ event.date | date : "mediumDate" }}
+        </li>
+      </ul>
+      <a routerLink="/events" class="text-blue-500 hover:underline"
+        >View All Events</a
+      >
+    </div>
+
+    <div class="bg-white rounded-lg shadow-md p-4">
+      <h2 class="text-xl font-bold mb-2">Job Opportunities</h2>
+      <ul class="list-disc space-y-2">
+        <li *ngFor="let job of jobOpportunities$ | async">
+          {{ job.title }} at {{ job.company }}
+        </li>
+      </ul>
+      <a routerLink="/jobs" class="text-blue-500 hover:underline"
+        >View All Jobs</a
+      >
+    </div>
+  </div>
+</div>
