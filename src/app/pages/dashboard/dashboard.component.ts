@@ -8,11 +8,15 @@ import { JobsService } from '../../service/jobs.service';
 interface UpcomingEvent {
   title: string;
   date: Date;
+  type: string;
+  attendance: number;
 }
 
 interface JobOpportunity {
   title: string;
   company: string;
+  type: string;
+  applications: number;
 }
 
 @Component({

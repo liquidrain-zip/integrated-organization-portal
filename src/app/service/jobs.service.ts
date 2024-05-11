@@ -6,6 +6,8 @@ import { catchError } from 'rxjs/operators';
 interface JobOpportunity {
   title: string;
   company: string;
+  type: string;
+  applications: number;
 }
 
 @Injectable({
@@ -24,24 +26,118 @@ export class JobsService {
 }
 
 const mockJobs: JobOpportunity[] = [
-  { title: 'Software Engineer', company: 'Tech Giant Inc.' },
-  { title: 'Data Scientist', company: 'Research Lab' },
-  { title: 'Product Manager', company: 'Startup Company' },
-  { title: 'Web Developer', company: 'E-commerce Platform' },
-  { title: 'UI/UX Designer', company: 'Creative Agency' },
-  { title: 'Full Stack Developer', company: 'Fintech Startup' },
-  { title: 'DevOps Engineer', company: 'Cloud Service Provider' },
-  { title: 'Data Analyst', company: 'Marketing Agency' },
-  { title: 'Software Architect', company: 'Enterprise Software Company' },
-  { title: 'Mobile App Developer', company: 'Social Media Platform' },
-  { title: 'Front-End Developer', company: 'E-learning Platform' },
-  { title: 'Back-End Developer', company: 'Healthcare IT Company' },
-  { title: 'QA Engineer', company: 'Gaming Studio' },
-  { title: 'Business Systems Analyst', company: 'Financial Services Company' },
-  { title: 'IT Support Specialist', company: 'Non-Profit Organization' },
-  { title: 'Network Security Engineer', company: 'Cybersecurity Firm' },
-  { title: 'Data Engineer', company: 'E-commerce Platform' },
-  { title: 'Machine Learning Engineer', company: 'Autonomous Vehicle Company' },
-  { title: 'Product Designer', company: 'Educational Software Company' },
-  { title: 'Content Marketing Specialist', company: 'Tech Startup' },
+  {
+    title: 'Software Engineer',
+    company: 'Tech Giant Inc.',
+    type: 'Full-Time',
+    applications: 120,
+  },
+  {
+    title: 'Data Scientist',
+    company: 'Research Lab',
+    type: 'Full-Time',
+    applications: 85,
+  },
+  {
+    title: 'Product Manager',
+    company: 'Startup Company',
+    type: 'Full-Time',
+    applications: 210,
+  },
+  {
+    title: 'Web Developer',
+    company: 'E-commerce Platform',
+    type: 'Full-Time',
+    applications: 150,
+  },
+  {
+    title: 'UI/UX Designer',
+    company: 'Creative Agency',
+    type: 'Full-Time',
+    applications: 90,
+  },
+  {
+    title: 'DevOps Engineer',
+    company: 'Cloud Service Provider',
+    type: 'Full-Time',
+    applications: 135,
+  },
+  {
+    title: 'Data Analyst',
+    company: 'Marketing Agency',
+    type: 'Full-Time',
+    applications: 105,
+  },
+  {
+    title: 'Software Architect',
+    company: 'Enterprise Software Company',
+    type: 'Full-Time',
+    applications: 70,
+  },
+  {
+    title: 'Mobile App Developer',
+    company: 'Social Media Platform',
+    type: 'Full-Time',
+    applications: 180,
+  },
+  {
+    title: 'Front-End Developer',
+    company: 'E-learning Platform',
+    type: 'Contract',
+    applications: 65,
+  },
+  {
+    title: 'Back-End Developer',
+    company: 'Healthcare IT Company',
+    type: 'Full-Time',
+    applications: 110,
+  },
+  {
+    title: 'QA Engineer',
+    company: 'Gaming Studio',
+    type: 'Full-Time',
+    applications: 140,
+  },
+  {
+    title: 'Business Systems Analyst',
+    company: 'Financial Services Company',
+    type: 'Full-Time',
+    applications: 80,
+  },
+  {
+    title: 'IT Support Specialist',
+    company: 'Non-Profit Organization',
+    type: 'Full-Time',
+    applications: 95,
+  },
+  {
+    title: 'Network Security Engineer',
+    company: 'Cybersecurity Firm',
+    type: 'Full-Time',
+    applications: 160,
+  },
+  {
+    title: 'Data Engineer',
+    company: 'E-commerce Platform',
+    type: 'Full-Time',
+    applications: 125,
+  },
+  {
+    title: 'Machine Learning Engineer',
+    company: 'Autonomous Vehicle Company',
+    type: 'Full-Time',
+    applications: 200,
+  },
+  {
+    title: 'Product Designer',
+    company: 'Educational Software Company',
+    type: 'Full-Time',
+    applications: 100,
+  },
+  {
+    title: 'Content Marketing Specialist',
+    company: 'Tech Startup',
+    type: 'Full-Time',
+    applications: 170,
+  },
 ];

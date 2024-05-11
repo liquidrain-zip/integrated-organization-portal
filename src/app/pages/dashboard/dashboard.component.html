@@ -1,24 +1,86 @@
 <div class="container mx-auto px-4 py-8">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <div class="bg-white rounded-lg shadow-md p-4">
-      <h2 class="text-xl font-bold mb-2">Job Opportunities</h2>
-      <ul class="list-disc space-y-2">
-        <li *ngFor="let job of jobOpportunities$ | async">
-          {{ job.title }} at {{ job.company }}
+      <h2
+        class="tw-text-2xl tw-font-bold tw-leading-7 tw-text-gray-900 sm:tw-truncate sm:tw-text-3xl sm:tw-tracking-tight"
+      >
+        Job Opportunities
+      </h2>
+      <ul role="list" class="tw-divide-y tw-divide-gray-100">
+        @for (job of jobOpportunities$ | async; track job) {
+        <li class="tw-flex tw-justify-between tw-gap-x-6 tw-py-5">
+          <div class="flex min-w-0 gap-x-4">
+            <div class="tw-min-w-0 tw-flex-auto">
+              <p
+                class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900"
+              >
+                {{ job.title }}
+              </p>
+              <p
+                class="tw-mt-1 tw-truncate tw-text-xs tw-leading-5 tw-text-gray-500"
+              >
+                {{ job.company }}
+              </p>
+            </div>
+          </div>
+          <div
+            class="tw-hidden tw-shrink-0 sm:tw-flex sm:tw-flex-col sm:tw-items-end"
+          >
+            <p class="tw-text-sm tw-leading-6 tw-text-gray-900">
+              {{ job.type }}
+            </p>
+            <p class="tw-mt-1 tw-text-xs tw-leading-5 tw-text-gray-500">
+              Applications: {{ job.applications }}
+            </p>
+          </div>
         </li>
+        }
       </ul>
-      <a routerLink="/jobs" class="text-blue-500 hover:underline"
+      <a
+        routerLink="/jobs"
+        class="tw-inline-flex tw-items-center tw-rounded-md tw-bg-indigo-600 tw-px-3 tw-py-2 tw-text-sm tw-font-semibold tw-text-white tw-shadow-sm hover:tw-bg-indigo-500 focus-visible:tw-outline focus-visible:tw-outline-2 focus-visible:tw-outline-offset-2 focus-visible:tw-outline-indigo-600"
         >View All Jobs</a
       >
     </div>
     <div class="bg-white rounded-lg shadow-md p-4">
-      <h2 class="text-xl font-bold mb-2">Upcoming Events</h2>
-      <ul class="list-disc space-y-2">
-        <li *ngFor="let event of upcomingEvents$ | async">
-          {{ event.title }} - {{ event.date | date : "mediumDate" }}
+      <h2
+        class="tw-text-2xl tw-font-bold tw-leading-7 tw-text-gray-900 sm:tw-truncate sm:tw-text-3xl sm:tw-tracking-tight"
+      >
+        Upcoming Events
+      </h2>
+      <ul role="list" class="tw-divide-y tw-divide-gray-100">
+        @for (event of upcomingEvents$ | async; track event) {
+        <li class="tw-flex tw-justify-between tw-gap-x-6 tw-py-5">
+          <div class="flex min-w-0 gap-x-4">
+            <div class="tw-min-w-0 tw-flex-auto">
+              <p
+                class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900"
+              >
+                {{ event.title }}
+              </p>
+              <p
+                class="tw-mt-1 tw-truncate tw-text-xs tw-leading-5 tw-text-gray-500"
+              >
+                {{ event.date | date : "mediumDate" }}
+              </p>
+            </div>
+          </div>
+          <div
+            class="tw-hidden tw-shrink-0 sm:tw-flex sm:tw-flex-col sm:tw-items-end"
+          >
+            <p class="tw-text-sm tw-leading-6 tw-text-gray-900">
+              {{ event.type }}
+            </p>
+            <p class="tw-mt-1 tw-text-xs tw-leading-5 tw-text-gray-500">
+              Attendance: {{ event.attendance }}
+            </p>
+          </div>
         </li>
+        }
       </ul>
-      <a routerLink="/events" class="text-blue-500 hover:underline"
+      <a
+        routerLink="/events"
+        class="tw-inline-flex tw-items-center tw-rounded-md tw-bg-indigo-600 tw-px-3 tw-py-2 tw-text-sm tw-font-semibold tw-text-white tw-shadow-sm hover:tw-bg-indigo-500 focus-visible:tw-outline focus-visible:tw-outline-2 focus-visible:tw-outline-offset-2 focus-visible:tw-outline-indigo-600"
         >View All Events</a
       >
     </div>
