@@ -3,42 +3,29 @@
     <div class="form-container sign-up">
       <form>
         <h1>Create Account</h1>
-        <input
-          type="text"
-          name="name"
-          [(ngModel)]="signUpUser.name"
-          placeholder="Name"
-        />
-        <input
-          type="email"
-          name="email"
-          [(ngModel)]="signUpUser.email"
-          placeholder="Email"
-        />
-        <input
-          type="password"
-          name="password"
-          [(ngModel)]="signUpUser.password"
-          placeholder="Password"
-        />
-        <button (click)="onRegister()">Sign Up</button>
+        <app-input-field-name
+          (onValueChange)="updateSignUpUser($event, 'name')"
+        ></app-input-field-name>
+        <app-input-field-email
+          (onValueChange)="updateSignUpUser($event, 'email')"
+        ></app-input-field-email>
+        <app-input-field-password
+          (onValueChange)="updateSignUpUser($event, 'password')"
+        ></app-input-field-password>
+        <button (click)="onRegister()" [disabled]="disableSignUp">
+          Sign Up
+        </button>
       </form>
     </div>
     <div class="form-container sign-in">
       <form>
         <h1>Sign In</h1>
-        <input
-          type="email"
-          name="email"
-          [(ngModel)]="loginUser.email"
-          placeholder="Email"
-        />
-        <input
-          type="password"
-          name="password"
-          [(ngModel)]="loginUser.password"
-          placeholder="Password"
-        />
+        <app-input-field-email
+          (onValueChange)="updateLoginUser($event, 'email')"
+        ></app-input-field-email>
+        <app-input-field-password
+          (onValueChange)="updateLoginUser($event, 'password')"
+        ></app-input-field-password>
         <a href="#">→ Forget Your Password? ←</a>
         <button (click)="onLogin()">Sign In</button>
       </form>

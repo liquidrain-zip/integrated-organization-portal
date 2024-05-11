@@ -1,0 +1,13 @@
+<mat-form-field>
+  <mat-label>Enter your name</mat-label>
+  <input
+    matInput
+    placeholder="your-cool-name"
+    [formControl]="name"
+    (blur)="updateErrorMessage(name)"
+    required
+  />
+  @if (name.invalid) {
+  <mat-error>{{ errorMessage }}</mat-error>
+  }
+</mat-form-field>

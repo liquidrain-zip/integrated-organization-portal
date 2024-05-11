@@ -1,0 +1,13 @@
+<mat-form-field>
+  <mat-label>Enter your email</mat-label>
+  <input
+    matInput
+    placeholder="your-cool-email"
+    [formControl]="email"
+    (blur)="updateErrorMessage(email)"
+    required
+  />
+  @if (email.invalid) {
+  <mat-error>{{ errorMessage }}</mat-error>
+  }
+</mat-form-field>
