@@ -18,6 +18,7 @@ interface JobOpportunity {
 })
 export class JobsComponent implements OnInit {
   jobOpportunities$: Observable<JobOpportunity[]>;
+  selectedJob: JobOpportunity;
 
   constructor(private jobsService: JobsService) {}
 
@@ -25,5 +26,9 @@ export class JobsComponent implements OnInit {
     this.jobOpportunities$ = this.jobsService
       .getAvailableJobs()
       .pipe(catchError((error) => of([])));
+  }
+
+  selectJob(job: JobOpportunity) {
+    this.selectedJob = job;
   }
 }
