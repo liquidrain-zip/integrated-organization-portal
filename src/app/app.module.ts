@@ -19,6 +19,9 @@ import { InputFieldNameComponent } from './components/input-field-name/input-fie
 import { InputFieldPasswordComponent } from './components/input-field-password/input-field-password.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { EventsComponent } from './pages/events/events.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,9 @@ import { EventsComponent } from './pages/events/events.component';
     MatListModule,
     MatButtonModule,
     MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

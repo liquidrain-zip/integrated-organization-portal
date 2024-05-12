@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, catchError, of } from 'rxjs';
+import { Observable, catchError, filter, map, of } from 'rxjs';
 import { JobsService } from '../../service/jobs.service';
 
 interface JobOpportunity {
@@ -23,6 +23,10 @@ export class JobsComponent implements OnInit {
   constructor(private jobsService: JobsService) {}
 
   ngOnInit() {
+    this.loadJobOpportunities();
+  }
+
+  loadJobOpportunities() {
     this.jobOpportunities$ = this.jobsService
       .getAvailableJobs()
       .pipe(catchError((error) => of([])));
@@ -30,5 +34,21 @@ export class JobsComponent implements OnInit {
 
   selectJob(job: JobOpportunity) {
     this.selectedJob = job;
+  }
+
+  filterJobs(event: any) {
+    const value = event.target.value;
+    if (value) {
+      this.jobOpportunities$ = this.jobsService.getAvailableJobs().pipe(
+        catchError((error) => of([])),
+        map((jobs: JobOpportunity[]) =>
+          jobs.filter((job: JobOpportunity) =>
+            job.title.toLowerCase().includes(value.toLowerCase())
+          )
+        )
+      );
+    } else {
+      this.loadJobOpportunities();
+    }
   }
 }

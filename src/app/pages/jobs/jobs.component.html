@@ -10,6 +10,21 @@
     Select a job below to view more
   </p>
   <div class="flex row tw-px-6">
+    <mat-form-field>
+      <mat-label>Filter job title</mat-label>
+      <input matInput (change)="filterJobs($event)" />
+    </mat-form-field>
+    <mat-label class="px-3 tw-mt-1 tw-truncate tw-leading-5 tw-text-gray-500"
+      >Sort by:</mat-label
+    >
+    <div class="px-3">
+      <mat-button-toggle-group name="sortJobs">
+        <mat-button-toggle value="title">Title</mat-button-toggle>
+        <mat-button-toggle value="company">Company</mat-button-toggle>
+        <mat-button-toggle value="type">Type</mat-button-toggle>
+        <mat-button-toggle value="applications">Applications</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
     <mat-list class="col">
       <div class="tw-divide-y tw-divide-gray-100">
         @for (job of jobOpportunities$ | async; track job) {
