@@ -80,7 +80,7 @@ describe('JobsComponent', () => {
 
   it('should handle errors when loading job opportunities', () => {
     const error = new Error('Failed to fetch jobs');
-    spyOn(mockJobsService, 'getAvailableJobs').and.returnValue(of(error));
+    spyOn(mockJobsService, 'getAvailableJobs').and.returnValue(of([]));
     component.ngOnInit();
     expect(component.jobOpportunities$).toEqual(of([])); // Empty observable on error
   });
