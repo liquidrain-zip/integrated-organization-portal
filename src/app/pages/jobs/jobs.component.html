@@ -18,7 +18,7 @@
       >Sort by:</mat-label
     >
     <div class="px-3">
-      <mat-button-toggle-group name="sortJobs">
+      <mat-button-toggle-group name="sortJobs" (change)="sortBy($event)">
         <mat-button-toggle value="title">Title</mat-button-toggle>
         <mat-button-toggle value="company">Company</mat-button-toggle>
         <mat-button-toggle value="type">Type</mat-button-toggle>

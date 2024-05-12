@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, catchError, filter, map, of } from 'rxjs';
 import { JobsService } from '../../service/jobs.service';
+import { MatButtonToggleChange } from '@angular/material/button-toggle';
 
 interface JobOpportunity {
   title: string;
@@ -50,5 +51,27 @@ export class JobsComponent implements OnInit {
     } else {
       this.loadJobOpportunities();
     }
+  }
+
+  sortBy(event: MatButtonToggleChange) {
+    const option = event.value;
+    this.jobOpportunities$ = this.jobOpportunities$.pipe(
+      map((jobs: JobOpportunity[]) => {
+        switch (option) {
+          case 'title':
+            return jobs.slice().sort((a, b) => a.title.localeCompare(b.title));
+          case 'company':
+            return jobs
+              .slice()
+              .sort((a, b) => a.company.localeCompare(b.company));
+          case 'type':
+            return jobs.slice().sort((a, b) => a.type.localeCompare(b.type));
+          case 'applications':
+            return jobs.slice().sort((a, b) => a.applications - b.applications);
+          default:
+            return jobs;
+        }
+      })
+    );
   }
 }
