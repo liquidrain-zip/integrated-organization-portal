@@ -11,6 +11,7 @@ interface UpcomingEvent {
   date: Date;
   type: string;
   attendance: number;
+  registered: boolean;
 }
 
 interface JobOpportunity {

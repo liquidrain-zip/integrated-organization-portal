@@ -29,16 +29,6 @@
                 </p>
               </div>
             </div>
-            <div
-              class="tw-hidden tw-shrink-0 sm:tw-flex sm:tw-flex-col sm:tw-items-end"
-            >
-              <p class="tw-text-sm tw-leading-6 tw-text-gray-900">
-                {{ event.type }}
-              </p>
-              <p class="tw-mt-1 tw-text-xs tw-leading-5 tw-text-gray-500">
-                Attendance: {{ event.attendance }}
-              </p>
-            </div>
           </div>
         </mat-list-item>
         }
@@ -53,13 +43,26 @@
         }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <p>Type:</p>
-        <p>Location:</p>
-        <p>Applications:</p>
-        <p>Application Deadline:</p>
+        <p>Type: {{ selectedEvent.type }}</p>
+        <p>Attendance: {{ selectedEvent.attendance }}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-stroked-button color="primary">Apply</button>
+        <button
+          mat-stroked-button
+          color="primary"
+          (click)="registerEvent(selectedEvent)"
+          [hidden]="selectedEvent.registered"
+        >
+          Register
+        </button>
+        <button
+          mat-stroked-button
+          color="primary"
+          (click)="unregisterEvent(selectedEvent)"
+          [hidden]="!selectedEvent.registered"
+        >
+          Unregister
+        </button>
       </mat-card-actions>
     </mat-card>
     }
