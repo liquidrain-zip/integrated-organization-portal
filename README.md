@@ -1,27 +1,49 @@
 # Integrated Organization Portal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0-next.0.
+## Project Setup
 
-## Development server
+This project is a web application built with Angular 17.3.8, RxJS 7.8.0, Tailwind CSS 3.4.3, and Angular Material 17.3.8. It provides functionalities for user authentication, managing a dashboard, listing job opportunities, and event management.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Key Features:
 
-## Code scaffolding
+1. User Authentication: Secure login, registration, and logout using email/password credentials with form validation and error handling. Leverages Angular Material components for a user-friendly interface.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Dashboard Component: Provides a personalized view for logged-in users, displaying upcoming events and available job opportunities. Utilizes Tailwind CSS for responsive design and Angular routing with lazy loading for navigation.
 
-## Build
+3. Job Listing Page: Fetches and displays job listings from a mock API or JSON file for youths. Offers filtering and sorting capabilities using Angular Material components. Protects the route with Angular guards.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+4. Event Management: Allows users to view upcoming events with details and register/unregister with ease. Employs Angular Material components and Tailwind CSS for a visually appealing interface. Secures access with Angular guards.
 
-## Running unit tests
+5. Unit Testing: Ensures code quality through unit tests covering both positive and negative scenarios for key components and services. Written with Jasmine and RxJS testing utilities for comprehensive testing.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Technologies Used:
 
-## Running end-to-end tests
+Angular 17.3.8: A robust framework for building interactive single-page web applications.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+RxJS 7.8.0: A reactive programming library for managing asynchronous data streams.
 
-## Further help
+Tailwind CSS 3.4.3: A utility-first CSS framework for rapid and responsive UI development.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Angular Material 17.3.8: A collection of pre-built UI components that adhere to Google's Material Design guidelines.
+
+## Benefits:
+
+Streamlined user authentication: Easy registration, login, and logout with clear feedback.
+
+Informative dashboard: Provides a personalized experience for logged-in users.
+
+Efficient job listings: Offers filtering and sorting options for quick job searching.
+
+Intuitive event management: Simplifies event discovery and registration.
+
+High code quality: Maintained through thorough unit testing practices.
+
+## Getting Started:
+
+Prerequisites: Ensure you have Node.js and npm (or yarn) installed on your system.
+
+Clone the Repository: Use git clone to clone this [repository](https://github.com/liquidrain-zip/integrated-organization-portal.git).
+
+Install Dependencies: Run npm install (or yarn install) in the project directory.
+
+Run the Application: Start the development server using ng serve. This will launch the application at http://localhost:4200 by default.
