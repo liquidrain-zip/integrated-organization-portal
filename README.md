@@ -18,32 +18,32 @@ This project is a web application built with Angular 17.3.8, RxJS 7.8.0, Tailwin
 
 ## Technologies Used:
 
-Angular 17.3.8: A robust framework for building interactive single-page web applications.
+1. Angular 17.3.8: A robust framework for building interactive single-page web applications.
 
-RxJS 7.8.0: A reactive programming library for managing asynchronous data streams.
+2. RxJS 7.8.0: A reactive programming library for managing asynchronous data streams.
 
-Tailwind CSS 3.4.3: A utility-first CSS framework for rapid and responsive UI development.
+3. Tailwind CSS 3.4.3: A utility-first CSS framework for rapid and responsive UI development.
 
-Angular Material 17.3.8: A collection of pre-built UI components that adhere to Google's Material Design guidelines.
+4. Angular Material 17.3.8: A collection of pre-built UI components that adhere to Google's Material Design guidelines.
 
 ## Benefits:
 
-Streamlined user authentication: Easy registration, login, and logout with clear feedback.
+1. Streamlined user authentication: Easy registration, login, and logout with clear feedback.
 
-Informative dashboard: Provides a personalized experience for logged-in users.
+2. Informative dashboard: Provides a personalized experience for logged-in users.
 
-Efficient job listings: Offers filtering and sorting options for quick job searching.
+3. Efficient job listings: Offers filtering and sorting options for quick job searching.
 
-Intuitive event management: Simplifies event discovery and registration.
+4. Intuitive event management: Simplifies event discovery and registration.
 
-High code quality: Maintained through thorough unit testing practices.
+5. High code quality: Maintained through thorough unit testing practices.
 
 ## Getting Started:
 
-Prerequisites: Ensure you have Node.js and npm (or yarn) installed on your system.
+1. Prerequisites: Ensure you have Node.js and npm (or yarn) installed on your system.
 
-Clone the Repository: Use git clone to clone this [repository](https://github.com/liquidrain-zip/integrated-organization-portal.git).
+2. Clone the Repository: Use git clone to clone this [repository](https://github.com/liquidrain-zip/integrated-organization-portal.git).
 
-Install Dependencies: Run npm install (or yarn install) in the project directory.
+3. Install Dependencies: Run npm install (or yarn install) in the project directory.
 
-Run the Application: Start the development server using ng serve. This will launch the application at http://localhost:4200 by default.
+4. Run the Application: Start the development server using ng serve. This will launch the application at http://localhost:4200 by default.
