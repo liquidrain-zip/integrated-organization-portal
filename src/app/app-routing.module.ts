@@ -5,6 +5,7 @@ import { LayoutComponent } from './pages/layout/layout.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { EventsComponent } from './pages/events/events.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -19,18 +20,22 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    canActivateChild: [AuthGuard],
     children: [
       {
         path: 'dashboard',
         component: DashboardComponent,
+        canActivate: [AuthGuard],
       },
       {
         path: 'jobs',
         component: JobsComponent,
+        canActivate: [AuthGuard],
       },
       {
         path: 'events',
         component: EventsComponent,
+        canActivate: [AuthGuard],
       },
     ],
   },

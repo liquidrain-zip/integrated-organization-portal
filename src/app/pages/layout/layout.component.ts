@@ -1,3 +1,4 @@
+import { AuthService } from './../../service/auth.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class LayoutComponent {
   loggedUser: any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private authService: AuthService) {
     const localUser = localStorage.getItem('loggedUser');
     if (localUser != null) {
       this.loggedUser = JSON.parse(localUser);
@@ -17,7 +18,7 @@ export class LayoutComponent {
   }
 
   onLogoff() {
-    localStorage.removeItem('loggedUser');
+    this.authService.logout();
     this.router.navigateByUrl('/login');
   }
 

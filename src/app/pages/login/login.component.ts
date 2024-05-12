@@ -1,3 +1,4 @@
+import { AuthService } from './../../service/auth.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -39,7 +40,7 @@ export class LoginComponent {
   disableLogin: boolean = true;
   loginSubscription: Subscription | null = null;
 
-  constructor(private router: Router, private http: HttpClient) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   updateSignUpUser(value: string, key: string) {
     this.signUpUser = {
@@ -115,9 +116,8 @@ export class LoginComponent {
   }
 
   onLogin() {
-    const loginUrl = '/api/login';
-    this.loginSubscription = this.http
-      .post(loginUrl, this.loginUser)
+    this.loginSubscription = this.authService
+      .login(this.loginUser)
       .pipe(
         map((response) => {
           // Handle successful login response (e.g., extract token)

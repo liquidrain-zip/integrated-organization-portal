@@ -22,6 +22,7 @@ import { EventsComponent } from './pages/events/events.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { PermissionsService } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     MatInputModule,
     MatButtonToggleModule,
   ],
-  providers: [],
+  providers: [PermissionsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
